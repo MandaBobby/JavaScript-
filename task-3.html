@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <title>Hello, World!</title>
+</head>
+<body>
+  
+  
+  <script>
+  var i,j;
+  i=prompt("enter your pin");
+  if (i >= 1 && i<=100)
+    {
+      document.write("<br>you are eligible");
+    }
+    else{
+      document.getElementById("pw").style.display="none";
+      document.write("<br>you are not eligible");
+    }
+    function check()
+    {
+    j = document.getElementById("pw").value;
+  
+    if(j == 1234)
+    {
+      document.write("<br>login successful");
+    }
+    else{
+      document.write("<br>wrong password");
+    }
+    }
+  </script>
+  <input type="password"id="pw">
+  <button type="submit"onclick="check()">submit</button>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    form{
+      width: 500px;
+    border: 2px solid rgb(238, 30, 30);
+    background-color: rgb(238, 232, 243);
+   padding-left: 100px;
+  margin-left: 100px;
+    }
+  </style>
+</head>
+<body style="background-color: aqua;">
+  <script>
+    function myfun()
+    {
+     var fn=document.getElementById("fn").value;
+     var ln=document.getElementById("ln").value;
+     var e=document.getElementById("e").value;
+     var p=document.getElementById("p").value;
+     var cp=document.getElementById("cp").value;
+     
+     if(p.length < 8)
+     {
+      alert("password must contain 8 letters");
+      document.getElementById("p").value="";
+      return false;
+     }
+     else if(p.length >16)
+     {
+     alert("password length is too high");
+     document.getElementById("p").value="";
+    return false;
+    }
+
+    else if(p != cp)
+    {
+      alert("password not matched");
+      return false;
+    }
+  else{
+alert("registration successful");
+  
+
+    localStorage.setItem("firstname",fn);
+    localStorage.setItem("lastname",ln);
+    localStorage.setItem("email",e);
+    localStorage.setItem("password",p);
+    
+  document.getElementById("result").innerHTML=`name : ${fn} ${ln} <br> email : ${e} <br> password : ${p}` ;
+return false;
+  }
+    }
+  </script>
+  <h1   style="text-align: center;">Registration Form</h1>
+  <form action="">
+    First Name :- <input type="text" id="fn" placeholder="enter your first name" required><br><br>
+    Laast Name :-<input type="text" id="ln" placeholder="enter your last name" required><br><br>
+    Email :-<input type="email" id="e" placeholder="enter your email" required><br><br>
+    Password :-<input type="password" id="p" placeholder="enter your password" required><br><br>
+    Confirm Password :-<input type="text" id="cp" placeholder="Confirm password" required>
+    <br><br>
+    <button type="submit" onclick="return myfun()" style="margin-left: 100px;">submit</button>
+
+  </form>
+  <p id="result"></p>
+</body>
+</html>
